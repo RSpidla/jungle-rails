@@ -1,6 +1,6 @@
 # <span style="color:#238795">Jungle Project Description</span>
 
-## Goal
+## <span style="color:#238795">Goal</span>
 
 There are multiple high-level goals to this project:
 
