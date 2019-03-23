@@ -15,3 +15,33 @@ body {
 form.button_to {
   display: inline;
 }
+
+// Jungle CSS
+body {
+	padding: 70px 0;
+}
+
+.navbar {
+  border-bottom: 1px solid #e7e7e7;
+  background-color: #f8f8f8;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,.25);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.25);
+}
+.navbar-brand {
+  float: left;
+  display: block;
+  border-bottom: none;
+  color: inherit;
+  font: bold 20px/20px Arial, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:link,
+  &:visited {
+    color: #333333;  
+    text-decoration: none;
+  }
+  &:hover,
+  &:focus {
+    color: blue;
+  }
+}
