@@ -39,8 +39,20 @@ cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('apparel1.jpg'),
-  quantity: 10,
+  quantity: 32,
   price: 64.99
+})
+
+product1 = cat1.products.first
+product1.reviews.create!({
+  user_id: 1,
+  description: 'I really love this shirt',
+  rating: 4
+})
+product1.reviews.create!({
+  user_id: 2,
+  description: 'It\'s okay. Not great.',
+  rating: 2
 })
 
 cat1.products.create!({
