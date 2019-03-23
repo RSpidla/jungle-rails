@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
-      redirect_to order, notice: 'Your Order has been placed.'
+      redirect_to order, notice: 'Your order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
   private
 
   def empty_cart!
-    # empty hash means no products in cart :)
+
     update_cart({})
   end
 
@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
     order = Order.new(
       email: params[:stripeEmail],
       total_cents: cart_subtotal_cents,
-      stripe_charge_id: stripe_charge.id, # returned by stripe
+      stripe_charge_id: stripe_charge.id,
     )
 
     enhanced_cart.each do |entry|
