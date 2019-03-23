@@ -75,5 +75,3 @@ Minor: The git commit history should have multiple commits and reasonable commit
 ## <span style="color:#238795">Automated Testing (Stretch / Optional)</span>
 
 The automated tests are not required for the project to be submitted. Please aim to submit your project to have it marked for completeness by Friday, whilst continuing to work on the automated tests.
-
-That said, you are encouraged to use the Request Assistance button to request smaller, in-person code reviews.
