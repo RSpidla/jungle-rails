@@ -1,4 +1,4 @@
-# <span style="color:#238795">Jungle App Project Description</span>
+# <span style="color:#238795">Jungle Project Description</span>
 
 ## Goal
 
