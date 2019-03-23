@@ -2,6 +2,17 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @products = []
+    @order.line_items.each do |line_item|
+      product_info = Product.find(line_item.product_id)
+      product_data = {
+        "ordered_quantity" => line_item.quantity,
+        "price_paid_cents" => line_item.item_price_cents,
+        "total_price_paid_cents" => line_item.total_price_cents,
+        "product_info" => product_info
+      }
+      @products.push product_data
+    end
   end
 
   def create
@@ -10,7 +21,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
-      redirect_to order, notice: 'Your order has been placed.'
+      redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
@@ -22,7 +33,7 @@ class OrdersController < ApplicationController
   private
 
   def empty_cart!
-
+    # empty hash means no products in cart :)
     update_cart({})
   end
 
@@ -39,7 +50,7 @@ class OrdersController < ApplicationController
     order = Order.new(
       email: params[:stripeEmail],
       total_cents: cart_subtotal_cents,
-      stripe_charge_id: stripe_charge.id,
+      stripe_charge_id: stripe_charge.id, # returned by stripe
     )
 
     enhanced_cart.each do |entry|
