@@ -20,7 +20,6 @@ form.button_to {
 body {
 	padding: 70px 0;
 }
-
 .navbar {
   border-bottom: 1px solid #e7e7e7;
   background-color: #f8f8f8;
@@ -44,4 +43,17 @@ body {
   &:focus {
     color: blue;
   }
+}
+.btn-primary {
+	color: #fff;
+	background-color: #238795;
+	border-color: #045B68;
+}
+a {
+  color: #238795;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #045B68;
+  text-decoration: underline;
 }
